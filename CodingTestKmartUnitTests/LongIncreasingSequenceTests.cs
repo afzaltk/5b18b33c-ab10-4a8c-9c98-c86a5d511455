@@ -55,6 +55,7 @@ namespace CodingTestKmartUnitTests
         [InlineData("4 5 7", "4 5 7")]
         [InlineData("4 2 5 7", "2 5 7")]
         [InlineData("4 3 1 2 5 7", "1 2 5 7")]
+        [InlineData("7 10 8 1 2", "7 10")]
         public void GetLongestIncreasingSequence_InputStringContainsTwoNumbersinIncreasingOrder_ShouldReturnBothNumbers(string input, string expectedResult)
         {
             //Act
