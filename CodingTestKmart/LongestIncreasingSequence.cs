@@ -6,13 +6,19 @@ using System.Threading.Tasks;
 
 namespace CodingTestKmart
 {
-   public class LongestIncreasingSequence
+    public class LongestIncreasingSequence
     {
 
-        public String GetLongestIncreasingSequence(String inputSequence)
+        public string GetLongestIncreasingSequence(string inputSequence)
         {
-           
-            return inputSequence;
+            if (string.IsNullOrEmpty(inputSequence))
+            {
+                return null;
+            }
+
+            var input = inputSequence.Split(" ").Select(int.Parse).ToList();
+
+            return input[0].ToString();
         }
     }
 }

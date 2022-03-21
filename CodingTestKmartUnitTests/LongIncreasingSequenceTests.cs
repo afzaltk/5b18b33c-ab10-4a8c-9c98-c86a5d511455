@@ -35,5 +35,19 @@ namespace CodingTestKmartUnitTests
             //Assert
             Assert.Equal(actualResult, expectedResult);
         }
+
+        [Fact]
+        public void GetLongestIncreasingSequence_InputStringContainsTwoSameNumbers_ShouldReturnEarliestNumber()
+        {
+            //Arrange
+            string input = "4 4";
+            string expectedResult = "4";
+
+            //Act
+            string actualResult = _longestIncreasingSequence.GetLongestIncreasingSequence(input);
+
+            //Assert
+            Assert.Equal(actualResult, expectedResult);
+        }
     }
 }
