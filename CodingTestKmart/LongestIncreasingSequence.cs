@@ -16,9 +16,23 @@ namespace CodingTestKmart
                 return null;
             }
 
-            var input = inputSequence.Split(" ").Select(int.Parse).ToList();
+            var inputNumbers = inputSequence.Split(" ").Select(int.Parse).ToList();
 
-            return input[0].ToString();
+            var i = 0;
+            var longestSequence = inputNumbers;
+
+            while (i < inputNumbers.Count - 1)
+            {
+                if (inputNumbers[i + 1] == inputNumbers[i])
+                {
+                    longestSequence = new List<int> {
+                        inputNumbers[i]
+                    };
+                }
+                i++;
+            }
+
+            return string.Join(" ", longestSequence);
         }
     }
 }

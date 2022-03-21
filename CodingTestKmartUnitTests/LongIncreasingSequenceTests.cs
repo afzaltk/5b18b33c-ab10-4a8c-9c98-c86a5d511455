@@ -49,5 +49,17 @@ namespace CodingTestKmartUnitTests
             //Assert
             Assert.Equal(actualResult, expectedResult);
         }
+
+        [Theory]
+        [InlineData("4 5", "4 5")]
+
+        public void GetLongestIncreasingSequence_InputStringContainsTwoNumbersinIncreasingOrder_ShouldReturnBothNumbers(string input, string expectedResult)
+        {
+            //Act
+            string actualResult = _longestIncreasingSequence.GetLongestIncreasingSequence(input);
+
+            //Assert
+            Assert.Equal(actualResult, expectedResult);
+        }
     }
 }
