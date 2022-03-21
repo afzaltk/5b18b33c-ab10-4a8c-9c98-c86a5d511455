@@ -33,7 +33,7 @@ namespace CodingTestKmartUnitTests
             string actualResult = _longestIncreasingSequence.GetLongestIncreasingSequence(input);
 
             //Assert
-            Assert.Equal(actualResult, expectedResult);
+            Assert.Equal(expectedResult, actualResult);
         }
 
         [Fact]
@@ -47,19 +47,21 @@ namespace CodingTestKmartUnitTests
             string actualResult = _longestIncreasingSequence.GetLongestIncreasingSequence(input);
 
             //Assert
-            Assert.Equal(actualResult, expectedResult);
+            Assert.Equal(expectedResult, actualResult);
         }
 
         [Theory]
         [InlineData("4 5", "4 5")]
-
+        [InlineData("4 5 7", "4 5 7")]
+        [InlineData("4 2 5 7", "2 5 7")]
+        [InlineData("4 3 1 2 5 7", "1 2 5 7")]
         public void GetLongestIncreasingSequence_InputStringContainsTwoNumbersinIncreasingOrder_ShouldReturnBothNumbers(string input, string expectedResult)
         {
             //Act
             string actualResult = _longestIncreasingSequence.GetLongestIncreasingSequence(input);
 
             //Assert
-            Assert.Equal(actualResult, expectedResult);
+            Assert.Equal(expectedResult, actualResult);
         }
     }
 }
