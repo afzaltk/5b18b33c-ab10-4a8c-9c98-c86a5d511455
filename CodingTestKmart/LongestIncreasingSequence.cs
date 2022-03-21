@@ -11,8 +11,8 @@ namespace CodingTestKmart
 
         public String GetLongestIncreasingSequence(String inputSequence)
         {
-
-            return null;
+           
+            return inputSequence;
         }
     }
 }

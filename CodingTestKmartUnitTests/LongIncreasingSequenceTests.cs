@@ -12,14 +12,28 @@ namespace CodingTestKmartUnitTests
         public void GetLongestIncreasingSequence_InputStringIsNull_ShouldReturnNull()
         {
             //Arrange
-            String input = null;
+            string input = null;
 
             //Act
-            String actualResult = _longestIncreasingSequence.GetLongestIncreasingSequence(input);
+            string actualResult = _longestIncreasingSequence.GetLongestIncreasingSequence(input);
 
             //Assert
             Assert.Null(actualResult);
 
+        }
+
+        [Fact]
+        public void GetLongestIncreasingSequence_InputStringContainsSingleNumber_ShouldReturnSingleNumber()
+        {
+            //Arrange
+            string input = "4";
+            string expectedResult = "4";
+
+            //Act
+            string actualResult = _longestIncreasingSequence.GetLongestIncreasingSequence(input);
+
+            //Assert
+            Assert.Equal(actualResult, expectedResult);
         }
     }
 }
