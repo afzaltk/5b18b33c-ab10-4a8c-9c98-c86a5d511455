@@ -21,5 +21,5 @@ Docker image and container setup complete. For docker compose, the service name 
 
 #CI/CD
 
-Set up CI/CD in Github Actions for .NET. Can possibly be done for Docker as well.
+Set up CI/CD in Github Actions for .NET along with linting. Can possibly be done for Docker as well.
 ![image](https://user-images.githubusercontent.com/26281129/159384676-5cf69212-b66b-4186-8db7-24dc22c650e1.png)
