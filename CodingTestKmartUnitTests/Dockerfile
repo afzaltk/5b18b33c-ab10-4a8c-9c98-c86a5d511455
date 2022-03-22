@@ -8,17 +8,14 @@ USER appuser
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0-focal AS build
 WORKDIR /src
+COPY ["CodingTestKmart/CodingTestKmart.csproj", "CodingTestKmart/"]
+RUN dotnet restore "CodingTestKmart/CodingTestKmart.csproj"
 COPY ["CodingTestKmartUnitTests/CodingTestKmartUnitTests.csproj", "CodingTestKmartUnitTests/"]
 RUN dotnet restore "CodingTestKmartUnitTests/CodingTestKmartUnitTests.csproj"
 COPY . .
 WORKDIR "/src/CodingTestKmartUnitTests"
 RUN dotnet build "CodingTestKmartUnitTests.csproj" -c Release -o /app/build
-RUN dotnet test "CodingTestKmartUnitTests.csproj" -c Release
 
-FROM build AS publish
-RUN dotnet publish "CodingTestKmartUnitTests.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "CodingTestKmartUnitTests.dll"]
+CMD dotnet test
+
